@@ -69,7 +69,7 @@ const Formulario = ({ setMonedas }) => {
     return (
         <>
 
-            {error && mensajeError}
+            {error && mensajeError()}
 
             <form
                 onSubmit={handleSubmit}
