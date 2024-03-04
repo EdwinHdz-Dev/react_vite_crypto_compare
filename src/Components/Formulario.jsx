@@ -56,14 +56,20 @@ const Formulario = ({ setMonedas }) => {
         }
 
         setError(false)
-        setMonedas({moneda, criptomoneda})
+        setMonedas({ moneda, criptomoneda })
 
+    }
+
+    const mensajeError = () => {
+        setTimeout(() => {
+            <Error>Todos los campos son obligatorios</Error>
+        }, 500)
     }
 
     return (
         <>
 
-            {error && <Error>Todos los campos son obligatorios</Error>}
+            {error && mensajeError}
 
             <form
                 onSubmit={handleSubmit}
