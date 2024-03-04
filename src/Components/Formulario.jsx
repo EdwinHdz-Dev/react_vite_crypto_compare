@@ -54,11 +54,20 @@ const Formulario = ({ setMonedas }) => {
             setError(true)
             return;
         }
-
         setError(false)
         setMonedas({ moneda, criptomoneda })
 
     }
+
+    useEffect(() => {
+        if (error) {
+            const temporizador = setTimeout(() => {
+                setError(false);
+            }, 3000); 
+
+            return () => clearTimeout(temporizador);
+        }
+    }, [error]);
 
     return (
         <>
